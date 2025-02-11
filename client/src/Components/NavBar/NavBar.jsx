@@ -42,10 +42,9 @@ const StyledButton = styled(Button)(({ isActive }) => ({
 
   fontSize: "1rem",
   color: isActive ? "#FFD700" : "#FFF", // Highlight active page color
-  textDecoration: isActive ? "underline" : "none", // Add underline for active page
+  textDecoration: isActive ? "none" : "none", // Removed underline for active page
   "&:hover": {
     color: "#FFD700",
-    textDecoration: "underline",
 
   },
 }));
@@ -232,25 +231,8 @@ function Navbar({ darkMode, toggleDarkMode }) {
           </>
         ) : (
           <MenuContainer>
-            <SearchBar />
-            <StyledButton
-              color="inherit"
-              component={Link}
-              to="/"
-              isActive={isActive("/")}
-              startIcon={<HomeIcon sx={{ fontSize: "1.5rem" }} />}
-            >
-                Home
-   </StyledButton>
-              
-         
-            <StyledButton
-              color="inherit"
-              component={Link}
-              to="/shop"
-              isActive={isActive("/shop")}
-              startIcon={<StoreIcon sx={{ fontSize: "1.5rem" }} />}
-            ></StyledButton>
+            <SearchBar onSearch={handleSearch} />
+            
             <StyledButton color="inherit" component={Link} to="/" isActive={isActive('/')} startIcon={<HomeIcon sx={{ fontSize: '1.5rem' }} />}>
               Home
             </StyledButton>

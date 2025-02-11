@@ -46,7 +46,7 @@ const SearchBar = () => {
   
 
   return (
-    <div className="w-[300px] my-0 mx-auto text-center">
+    <div className="w-[300px] my-0 mx-auto text-center text-black">
       <input
         type="text"
         value={query}
