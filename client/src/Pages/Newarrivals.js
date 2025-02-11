@@ -115,7 +115,7 @@ function Newarrivals({ onBookClick, highlightedBookId }) {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
           {books.map((book, index) => (
             <Link to={`/book/${book.id}`}>
-              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden transition transform hover:scale-105 hover:shadow-xl">
                   <img src={book.imageURL} alt={book.bookTitle} className="w-full h-48 object-cover" />
                   <div className="p-4 dark:bg-[rgb(30,30,30)] dark:text-white">
                       <h3 className="font-bold text-lg mb-2 truncate dark:text-white">{book.bookTitle}</h3>

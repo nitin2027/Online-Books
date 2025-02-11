@@ -11,7 +11,7 @@ import { Pagination, Autoplay} from 'swiper/modules';
 function Review() {
     return (
         <div className='my-2 px-4 lg:px-24'>
-            <h2 className='text-5xl dark:text-white font-bold text-center mb-10 leading-snug'>Our Customers</h2>
+            <h2 className='text-4xl font-bold mb-10 text-gray-800 dark:text-white text-center'>Our Customers</h2>
             <div>
                 <Swiper
                     slidesPerView={1}

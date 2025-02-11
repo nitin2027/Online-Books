@@ -1,5 +1,5 @@
 import Header from "./Header/Header.js";
-import HomePage from "./HomePage";
+import HomePage from "./HomePage.js";
 import Product from "./Product.jsx"
 import Footer from "./Footer/Footer.jsx"
 import Navbar from "./NavBar/NavBar.jsx";

@@ -16,6 +16,16 @@ import KlaraAndtheSun from '../assets/image/klaraAndtheSun.jpg';
 import ProjectHailMary from '../assets/image/projectHailMary.jpg';
 import MalibuRising from '../assets/image/malibuRising.jpg';
 
+const categories = [
+  { name: "Romance", path: "/romance", gradient: "from-pink-400 to-red-400", darkGradient: "from-purple-600 to-purple-900" },
+  { name: "Action", path: "/action", gradient: "from-blue-400 to-indigo-400", darkGradient: "from-indigo-500 to-blue-800" },
+  { name: "Thriller", path: "/thriller", gradient: "from-gray-400 to-gray-600", darkGradient: "from-gray-700 to-black" },
+  { name: "Fiction", path: "/fiction", gradient: "from-green-400 to-teal-400", darkGradient: "from-green-600 to-teal-800" },
+  { name: "Tech", path: "/tech", gradient: "from-yellow-400 to-orange-400", darkGradient: "from-yellow-600 to-orange-800" },
+  { name: "Philosophy", path: "/philosophy", gradient: "from-purple-400 to-pink-400", darkGradient: "from-purple-600 to-pink-800" },
+  { name: "Manga", path: "/manga", gradient: "from-red-400 to-purple-400", darkGradient: "from-red-600 to-orange-800" },
+];
+
 const Home = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
@@ -87,7 +97,7 @@ const Home = () => {
           <>
 
             {/* Search Bar */}
-            <SearchBar onSearch={handleSearch} />
+            {/* <SearchBar onSearch={handleSearch} /> */}
             {emptySearch && (
               <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center">
                 <div className="bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-11/12 sm:w-3/4 md:w-1/2 lg:w-1/3 text-center mx-4">
@@ -143,68 +153,34 @@ const Home = () => {
               </div>
             </header>
 
-            <section className="container mx-auto my-8">
-              <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-white text-center">Book Categories</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-                <Link to="/romance">
-                  <div className="bg-gradient-to-r from-pink-200 to-red-200 dark:from-purple-700 dark:to-purple-900 text-white rounded-lg shadow-md p-6 transform transition duration-500 hover:scale-105 hover:bg-gradient-to-r hover:from-pink-400 hover:to-red-400 dark:hover:from-purple-600 dark:hover:to-purple-900">
-                    <h3 className="text-xl font-bold mb-2 dark:text-white">Romance</h3>
-                    <p className="text-gray-700 dark:text-gray-300">Explore our collection of romantic novels.</p>
-                  </div>
-                </Link>
-
-                <Link to="/action">
-                  <div className="bg-gradient-to-r from-blue-200 to-indigo-200 dark:from-indigo-600 dark:to-blue-900 text-white rounded-lg shadow-md p-6 transform transition duration-500 hover:scale-105 hover:bg-gradient-to-r hover:from-blue-300 hover:to-indigo-300 dark:hover:from-indigo-500 dark:hover:to-blue-800">
-                    <h3 className="text-xl font-bold mb-2 text-center">Action</h3>
-                    <p className="text-gray-700 dark:text-gray-300 text-center">Dive into thrilling action-packed stories.</p>
-                  </div>
-                </Link>
-
-                <Link to="/thriller">
-                  <div className="bg-gradient-to-r from-gray-200 to-gray-400 dark:from-gray-800 dark:to-black text-white rounded-lg shadow-md p-6 transform transition duration-500 hover:scale-105 hover:bg-gradient-to-r hover:from-gray-300 hover:to-gray-500 dark:hover:from-gray-700 dark:hover:to-black">
-                    <h3 className="text-xl font-bold mb-2 text-center">Thriller</h3>
-                    <p className="text-gray-700 dark:text-gray-300 text-center">Get your adrenaline pumping with our thrillers.</p>
-                  </div>
-                </Link>
-
-                <Link to="/fiction">
-                  <div className="bg-gradient-to-r from-green-200 to-teal-200 dark:from-green-700 dark:to-teal-900 text-white rounded-lg shadow-md p-6 transform transition duration-500 hover:scale-105 hover:bg-gradient-to-r hover:from-green-300 hover:to-teal-300 dark:hover:from-green-600 dark:hover:to-teal-800">
-                    <h3 className="text-xl font-bold mb-2 text-center">Fiction</h3>
-                    <p className="text-gray-700 dark:text-gray-300 text-center">Discover imaginative and captivating fiction.</p>
-                  </div>
-                </Link>
-
-                <Link to="/tech">
-                  <div className="bg-gradient-to-r from-yellow-200 to-orange-200 dark:from-yellow-700 dark:to-orange-900 text-white rounded-lg shadow-md p-6 transform transition duration-500 hover:scale-105 hover:bg-gradient-to-r hover:from-yellow-300 hover:to-orange-300 dark:hover:from-yellow-600 dark:hover:to-orange-800">
-                    <h3 className="text-xl font-bold mb-2 text-center">Tech</h3>
-                    <p className="text-gray-700 dark:text-gray-300 text-center">Stay updated with the latest in technology.</p>
-                  </div>
-                </Link>
-
-                <Link to="/philosophy">
-                  <div className="bg-gradient-to-r from-purple-200 to-pink-200 dark:from-purple-700 dark:to-pink-900 text-white rounded-lg shadow-md p-6 transform transition duration-500 hover:scale-105 hover:bg-gradient-to-r hover:from-purple-300 hover:to-pink-300 dark:hover:from-purple-600 dark:hover:to-pink-800">
-                    <h3 className="text-xl font-bold mb-2 text-center">Philosophy</h3>
-                    <p className="text-gray-700 dark:text-gray-300 text-center">Dive deep into philosophical thoughts and ideas.</p>
-                  </div>
-                </Link>
-
-                <Link to="/manga">
-                  <div className="bg-gradient-to-r from-pink-200 to-purple-200 dark:from-pink-700 dark:to-purple-900 text-white rounded-lg shadow-md p-6 transform transition duration-500 hover:scale-105 hover:bg-gradient-to-r hover:from-pink-300 hover:to-purple-300 dark:hover:from-pink-600 dark:hover:to-purple-800">
-                    <h3 className="text-xl font-bold mb-2 text-center">Manga</h3>
-                    <p className="text-gray-700 dark:text-gray-300 text-center">Explore our extensive collection of Manga.</p>
-                  </div>
-                </Link>
-
-              </div>
-            </section>
+      <section className="container mx-auto my-12 px-6">
+      <h2 className="text-4xl font-bold mb-10 text-gray-800 dark:text-white text-center">
+        Book Categories
+      </h2>
+      <div className="flex flex-wrap justify-center gap-6">
+        {categories.map((category) => (
+          <Link key={category.name} to={category.path} className="w-full sm:w-[300px]">
+            <div
+              className={`bg-gradient-to-r ${category.gradient} dark:${category.darkGradient} text-white rounded-lg shadow-lg p-8 text-center transition transform hover:scale-105 hover:shadow-xl h-[180px] flex flex-col justify-center`}
+            >
+              <h3 className="text-2xl font-semibold mb-2">{category.name}</h3>
+              <p className="text-gray-100">Explore our {category.name.toLowerCase()} collection.</p>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </section>
 
 
 
 
             {/* New Arrivals Section */}
-            <section className="bg-gray-200 py-8 dark:bg-[rgb(40,40,40)]">
-              <div className="container mx-auto">
+            
+            <section className="py-8 dark:bg-[rgb(40,40,40)]">
+              <h2 className="text-4xl font-bold mb-10 text-gray-800 dark:text-white text-center">
+                New Arrivals
+            </h2>
+              <div className="flex flex-wrap justify-center gap-6">
                 <Newarrivals
                   onBookClick={(bookTitle) => {
                     const book = newbooks.find(b => b.title === bookTitle);
@@ -229,7 +205,7 @@ const Home = () => {
               <div className="overflow-x-auto">
                 <div className="flex space-x-6">
                   <Link to="/where-the-crawdads-sing">
-                    <div className="bg-white rounded-lg shadow-lg p-6 slide-in transition-opacity duration-500 delay-900 dark:bg-[rgb(30,30,30)] w-64 flex flex-col hover:shadow-xl hover:scale-105 hover:bg-blue-100 dark:hover:bg-blue-800">
+                    <div className="bg-white rounded-lg shadow-lg p-6 slide-in transition-opacity ease-in-out duration-500 dark:bg-[rgb(30,30,30)] w-64 flex flex-col hover:shadow-xl hover:scale-105 hover:bg-blue-100 dark:hover:bg-blue-800">
                       <img src={crawdadsImage} alt="Where the Crawdads Sing" className="mb-4 h-54 w-full object-cover rounded-md" />
                       <h3 className="text-xl font-bold mb-2 dark:text-white">Where the Crawdads Sing</h3>
                       <p className="text-gray-600 dark:text-white">A coming-of-age story intertwined with a murder mystery set in the marshes of North Carolina.</p>
@@ -288,9 +264,9 @@ const Home = () => {
             </section>
             {/* Featured Author Section */}
             <section className="container mx-auto my-8 ">
-              <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-white">Featured Author</h2>
+              <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-white text-center">Featured Author</h2>
 
-              <div className="bg-white rounded-lg shadow-lg p-6 flex items-center dark:bg-[rgb(30,30,30)]">
+              <div className="bg-[#fce3a0] rounded-xl shadow-xl p-6 flex flex-auto items-center dark:bg-[rgb(30,30,30)]">
                 <img
                   src={data.featuredAuthor.image}
                   alt={data.featuredAuthor.name}

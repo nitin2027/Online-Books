@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './Contributors.css';
+// import './Contributors.css';
 import '../Animations.css'
 import Preloader from '../Components/Preloader';
 
